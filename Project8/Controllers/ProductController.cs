@@ -36,5 +36,16 @@ namespace Project8.Controllers
                     Action = "Newest"
                 });
         }
+        public IActionResult Details(int id)
+        {
+            var res = new Result()
+            {
+                 Action="Details",
+                  Controller="Product",
+                   
+            };
+            res.RouteData["id"] = RouteData.Values["id"];
+            return View("MyView",res);
+        }
     }
 }

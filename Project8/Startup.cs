@@ -31,13 +31,23 @@ namespace Project8
                 routes => {
                     routes.MapRoute(
 
-                        name:"default",
-                        template:"{controller=home}/{action=index}",
-                         defaults:new {action="Index" }
+                       name: "shop",
+                       template: "shop/{action=Index}",
+                       
+                       defaults:new { controller="Product"}
+                       );
+                    routes.MapRoute(
+                        name:"catalog",
+                         template:"catalog/{controller=product}/{action=index}"
+                        );
+                    routes.MapRoute(
+
+                        name: "default",
+                        template: "{controller=Home}/{action=Index}/{id?}");
+                          }
     
                         );
-                }
-                );
+               
         }
     }
 }
